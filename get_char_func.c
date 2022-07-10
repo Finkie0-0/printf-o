@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * get_char_func - selects correct char inputted as arg in the _printf function.
+ * get_char_func - selects correct char inputted as arg in the _printf funct.
  *
- * @c: pointer to the c passed as an argument to the funcion.
+ * @format: pointer to the c format passed as an argument to the funcion.
  *
  * Return: pointer to the character passed as an arg.
  */
