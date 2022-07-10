@@ -26,11 +26,8 @@ int _printf(const char *format, ...)
 			count++;
 		}
 		if (!format[i])
-<<<<<<< HEAD
+
 			return(count);
-=======
-			return (count);
->>>>>>> a61e5543353fe70ce953c8157b9531247a94a05f
 		f = get_char_func(&format[i + 1]);
 		if (f != NULL)
 		{
