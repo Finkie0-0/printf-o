@@ -5,13 +5,14 @@
 /**
  * print_char - prints out a character.
  *
- * @arg_ptr: pointer to the arguments list.
- * Return: number of printed char.
+ * @c: character to be printed
+ * Return: Always 1.
  */
 
 int print_char(va_list c)
 {
-	char ch = (char) va_arg(c,int);
+	char ch = (char) va_arg(c, int);
+
 	_putchar(ch);
 	return (1);
 }
@@ -20,8 +21,8 @@ int print_char(va_list c)
 /**
  * print_string - prints out the string.
  *
- * @arg_ptr: pointer to the arguments list.
- * Return: string and arguments.
+ * @s: string to be printed out.
+ * Return: number of chars to be printed.
  */
 
 int print_string(va_list s)
@@ -31,7 +32,8 @@ int print_string(va_list s)
 
 	if (str == NULL)
 		str = "(null)";
-	for (count = 0; str[count];count++)
+
+	for (count = 0; str[count]; count++)
 	{
 		_putchar(str[count]);
 	}
