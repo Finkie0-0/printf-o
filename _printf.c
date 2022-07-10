@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	unsigned int count = 0;
 	int (*f)(va_list);
 
-	va_start(args_ptr,format);
+	va_start(args_ptr, format);
 	if (format == NULL)
 		return (-1);
 
@@ -26,7 +26,11 @@ int _printf(const char *format, ...)
 			count++;
 		}
 		if (!format[i])
+<<<<<<< HEAD
 			return(count);
+=======
+			return (count);
+>>>>>>> a61e5543353fe70ce953c8157b9531247a94a05f
 		f = get_char_func(&format[i + 1]);
 		if (f != NULL)
 		{
@@ -35,7 +39,7 @@ int _printf(const char *format, ...)
 			continue;
 		}
 		if (!format[i + 1])
-			return(-1);
+			return (-1);
 		_putchar(format[i]);
 		count++;
 		if (format[i + 1] == '%')
@@ -44,5 +48,5 @@ int _printf(const char *format, ...)
 			i++;
 	}
 	va_end(args_ptr);
-	return(count);
+	return (count);
 }

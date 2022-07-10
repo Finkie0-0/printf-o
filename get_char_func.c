@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * get_char_func - selects correct char inputted as arg in the _printf function.
+ * get_char_func - selects correct char inputted as arg in the _printf funct.
  *
- * @c: pointer to the c passed as an argument to the funcion.
+ * @format: pointer to the c format passed as an argument to the funcion.
  *
  * Return: pointer to the character passed as an arg.
  */
@@ -11,15 +11,18 @@ int (*get_char_func(const char *format))(va_list)
 	character_args_t cp[] = {
 		{"c", print_char},
 		{"s", print_string},
+		{"d", print_dol},
+		{"i", print_int},
 	};
 
-	int i = 0;
+	int i;
 
-	do {
-		if (*format == *(cp[i].c))
-			return (cp[i].f);
-		i++;
-	} while (i < 2);
+	for (i = 0; cp[i].c != NULL; i++)
+	{
+		if (*(cp[i].c) == *format)
+			break;
+	}
+
 	return (cp[i].f);
 
 }

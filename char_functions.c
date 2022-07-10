@@ -5,13 +5,14 @@
 /**
  * print_char - prints out a character.
  *
- * @arg_ptr: pointer to the arguments list.
- * Return: number of printed char.
+ * @c: character to be printed
+ * Return: Always 1.
  */
 
 int print_char(va_list c)
 {
-	char ch = (char) va_arg(c,int);
+	char ch = (char) va_arg(c, int);
+
 	_putchar(ch);
 	return (1);
 }
@@ -19,8 +20,8 @@ int print_char(va_list c)
 /**
  * print_string - prints out the string.
  *
- * @arg_ptr: pointer to the arguments list.
- * Return: string and arguments.
+ * @s: string to be printed out.
+ * Return: number of chars to be printed.
  */
 
 int print_string(va_list s)
@@ -30,6 +31,10 @@ int print_string(va_list s)
 
 	if (str == NULL)
 		str = "(null)";
+<<<<<<< HEAD
+=======
+
+>>>>>>> a61e5543353fe70ce953c8157b9531247a94a05f
 	for (count = 0; str[count]; count++)
 	{
 		_putchar(str[count]);
@@ -37,6 +42,7 @@ int print_string(va_list s)
 	return (count);
 }
 
+<<<<<<< HEAD
 /**
  * print_unsigned_int -prints out binary number from unsigned integer
  *
@@ -70,3 +76,88 @@ int print_unsigned_int(va_list b)
 	return (count);
 }
 
+=======
+/* FOR NUMBERS && DIGITS */
+
+/**
+ * print_int - prints out an integer.
+ *
+ * @i: integer to be printed out.
+ *
+ * Return: number of characters and digits printed out.
+ */
+
+int print_int(va_list i)
+{
+	int arr[10];
+	int x, y, z, sum, counter;
+
+	z = va_arg(i, int);
+	counter = 0;
+	y = 1000000000;
+	arr[0] = z / y;
+	for (x = 1; x < 10; x++)
+	{
+		y /= 10;
+		arr[x] = (z / y) % 10;
+	}
+	if (z < 0)
+	{
+		_putchar('-');
+		counter++;
+		for (x = 0; x < 10; x++)
+			arr[x] *= -1;
+	}
+	for (x = 0, sum = 0; x < 10; x++)
+	{
+		sum += arr[x];
+		if (sum != 0 || x == 9)
+		{
+			_putchar('0' + arr[x]);
+			counter++;
+		}
+	}
+	return (counter);
+}
+
+/**
+ * print_dol - prints out a decimal/ double.
+ *
+ * @d: decimal to be printed out.
+ *
+ * Return: number of characters and digits to be printed
+ */
+
+int print_dol(va_list d)
+{
+	int arr[10];
+	int x, y, z, sum, counter;
+
+	z = va_arg(d, int);
+	counter = 0;
+	y = 1000000000;
+	arr[0] = z / y;
+	for (x = 1; x < 10; x++)
+	{
+		y /= 10;
+		arr[x] = (z / y) % 10;
+	}
+	if (z < 0)
+	{
+		_putchar('-');
+		counter++;
+		for (x = 0; x < 10; x++)
+			arr[x] *= -1;
+	}
+	for (x = 0, sum = 0; x < 10; x++)
+	{
+		sum += arr[x];
+		if (sum != 0 || x == 9)
+		{
+			_putchar('0' + arr[x]);
+			counter++;
+		}
+	}
+	return (counter);
+}
+>>>>>>> a61e5543353fe70ce953c8157b9531247a94a05f

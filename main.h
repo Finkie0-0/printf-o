@@ -25,8 +25,6 @@ typedef struct character_args
 
 int _putchar(char c);
 
-int _puts(char *str, int ascii );
-
 /* converting prototypes */
 
 int convert_alpha_numeric(int number, int upper);
@@ -48,5 +46,7 @@ int print_string(va_list s);
 int print_int(va_list i);
 
 int print_dol(va_list d);
+
+int print_unsigned_int(va_list b);
 
 #endif /* MAIN_H  */
