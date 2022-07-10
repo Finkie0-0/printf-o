@@ -13,15 +13,18 @@ int (*get_char_func(const char *format))(va_list)
 	character_args_t cp[] = {
 		{"c", print_char},
 		{"s", print_string},
+		{"d", print_dol},
+		{"i", print_int},
 	};
 
-	int i = 0;
+	int i;
 
-	do {
-		if (*format == *(cp[i].c))
-			return (cp[i].f);
-		i++;
-	} while (i < 2);
+	for (i = 0; cp[i].c != NULL; i++)
+	{
+		if (*(cp[i].c) == *format)
+			break;
+	}
+
 	return (cp[i].f);
 
 }
