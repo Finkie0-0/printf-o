@@ -31,10 +31,6 @@ int print_string(va_list s)
 
 	if (str == NULL)
 		str = "(null)";
-<<<<<<< HEAD
-=======
-
->>>>>>> a61e5543353fe70ce953c8157b9531247a94a05f
 	for (count = 0; str[count]; count++)
 	{
 		_putchar(str[count]);
