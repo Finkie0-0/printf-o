@@ -39,12 +39,14 @@ int _printf(const char *format, ...);
 
 /* sub _printf function prototypes  */
 
-int (*get_char_func(char *c))(va_list);
+int (*get_char_func(const char *format))(va_list);
 
-int print_char(va_list args_ptr);
+int print_char(va_list c);
 
-int print_string(va_list args_ptr);
+int print_string(va_list s);
 
-int print_percent(va_list args_ptr);
+int print_int(va_list i);
+
+int print_dol(va_list d);
 
 #endif /* MAIN_H  */

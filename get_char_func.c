@@ -8,7 +8,7 @@
  * Return: pointer to the character passed as an arg.
  */
 
-int (*get_char_func(char *c))(va_list)
+int (*get_char_func(const char *format))(va_list)
 {
 	character_args_t cp[] = {
 		{"c", print_char},
@@ -18,7 +18,7 @@ int (*get_char_func(char *c))(va_list)
 	int i = 0;
 
 	do {
-		if (*c == *(cp[i].c))
+		if (*format == *(cp[i].c))
 			return (cp[i].f);
 		i++;
 	} while (i < 2);

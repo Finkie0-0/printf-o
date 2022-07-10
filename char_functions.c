@@ -1,5 +1,6 @@
 #include "main.h"
 #include <unistd.h>
+/*FOR CHARACTERS && STRINGS */
 
 /**
  * print_char - prints out a character.
@@ -8,13 +9,10 @@
  * Return: number of printed char.
  */
 
-int print_char(va_list args_ptr)
+int print_char(va_list c)
 {
-	char c = va_arg(args_ptr, int);
-
-	if (c == '\0')
-		return (write(1, &c, 1));
-	_putchar(c);
+	char ch = (char) va_arg(c,int);
+	_putchar(ch);
 	return (1);
 }
 
@@ -26,15 +24,16 @@ int print_char(va_list args_ptr)
  * Return: string and arguments.
  */
 
-int print_string(va_list args_ptr)
+int print_string(va_list s)
 {
-	char *args = va_arg(args_ptr, char *);
+	int count;
+	char *str = va_arg(s, char *);
 
-	int sum = 0;
-	if (!args)
+	if (str == NULL)
+		str = "(null)";
+	for (count = 0; str[count];count++)
 	{
-		sum += _puts("(null)", 0);
-		return (sum);
+		_putchar(str[count]);
 	}
-	return (_puts(args, 0));
+	return (count);
 }
