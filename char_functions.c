@@ -114,7 +114,7 @@ int print_dol(va_list d)
 	}
 	for (x = 0, sum = 0; x < 10; x++)
 	{
-		sum += arr[j];
+		sum += arr[x];
 		if (sum != 0 || x == 9)
 		{
 			_putchar('0' + arr[x]);
