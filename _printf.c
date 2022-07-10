@@ -27,11 +27,11 @@ int _printf(const char *format, ...)
 		}
 		if (!format[i])
 			return(count);
-		f = get_char_func(&format[i +1]);
+		f = get_char_func(&format[i + 1]);
 		if (f != NULL)
 		{
 			count += f(args_ptr);
-			i+=2;
+			i += 2;
 			continue;
 		}
 		if (!format[i + 1])
@@ -46,6 +46,3 @@ int _printf(const char *format, ...)
 	va_end(args_ptr);
 	return(count);
 }
-			
-
-

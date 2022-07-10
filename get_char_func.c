@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * get_char_func - selects correct char inputted as arg in the _printf function.
  *
@@ -7,7 +6,6 @@
  *
  * Return: pointer to the character passed as an arg.
  */
-
 int (*get_char_func(const char *format))(va_list)
 {
 	character_args_t cp[] = {
