@@ -13,6 +13,7 @@ int (*get_char_func(const char *format))(va_list)
 		{"s", print_string},
 		{"d", print_dol},
 		{"i", print_int},
+		{"b", print_unsigned_int},
 	};
 
 	int i;
@@ -26,3 +27,5 @@ int (*get_char_func(const char *format))(va_list)
 	return (cp[i].f);
 
 }
+
+
