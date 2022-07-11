@@ -48,49 +48,4 @@ int print_hex(unsigned int n, unsigned int c)
 	return (counter);
 }
 
-/**
- * _power - calculates an exponent.
- *
- * @n: the base of the exponent.
- * @x: exponent of a number.
- *
- * Return: n ^ x.
- */
 
-unsigned long _power(unsigned int n, unsigned int x)
-{
-	unsigned int index;
-	unsigned long result = n;
-
-	for (index = 1; index < x; index++)
-	{
-		result *= n;
-	}
-	return (result);
-}
-
-/**
- * hex_printer - converts character ascii value to hex uppercase.
- *
- * @c: char to be converted.
- *
- * Return: Always 2.
- */
-
-int hex_printer(char c)
-{
-	int counter;
-	char diff = 'A' - ':';
-	char d[2];
-
-	d[0] = c / 16;
-	d[1] = c % 16;
-	for (counter = 0; counter < 2; counter++)
-	{
-		if (d[counter] >= 10)
-			_putchar('0' + diff + d[counter]);
-		else
-			_putchar('0' + d[counter]);
-	}
-	return (counter);
-}
