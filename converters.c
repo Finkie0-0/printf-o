@@ -47,3 +47,24 @@ int print_hex(unsigned int n, unsigned int c)
 	}
 	return (counter);
 }
+
+/**
+ * _power - calculates an exponent.
+ *
+ * @n: the base of the exponent.
+ * @x: exponent of a number.
+ *
+ * Return: n ^ x.
+ */
+
+unsigned long _power(unsigned int n, unsigned int x)
+{
+	unsigned int index;
+	unsigned long result = n;
+
+	for (index = 1; index < x; index++)
+	{
+		result *= n;
+	}
+	return (result);
+}
