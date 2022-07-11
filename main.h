@@ -31,6 +31,8 @@ int print_hex(unsigned int n, unsigned int c);
 
 unsigned long _power(unsigned int n, unsigned int x);
 
+int hex_printer(char c);
+
 /* main _printf function */
 
 int _printf(const char *format, ...);
@@ -59,6 +61,6 @@ int print_unsignedintX(va_list X);
 
 int print_addr(va_list p);
 
-int print_stringNon(va_list s);
+int print_stringNon(va_list S);
 
 #endif /* MAIN_H  */
