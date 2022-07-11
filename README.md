@@ -4,4 +4,4 @@
 ## char_functions.c - contains the functions that perform operations to write to stdout.
 ## get_char_functions.c - selects the correct character to perform the required write to stdout operation.
 ## converters.c - contains functions that converts characters or digits to different formats.
-
+## hexa_functions.c - contains functions that perform operations to write to stdout.
