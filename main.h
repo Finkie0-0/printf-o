@@ -27,9 +27,7 @@ int _putchar(char c);
 
 /* converting prototypes */
 
-int convert_alpha_numeric(int number, int upper);
-
-char *convert_base(unsigned long number, unsigned int base, int upper);
+int print_hex(unsigned int n, unsigned int c);
 
 /* main _printf function */
 
@@ -46,5 +44,11 @@ int print_string(va_list s);
 int print_int(va_list i);
 
 int print_dol(va_list d);
+
+int print_unsignedint(va_list b);
+
+int print_unsignedintx(va_list x);
+
+int print_unsignedintX(va_list X);
 
 #endif /* MAIN_H  */
