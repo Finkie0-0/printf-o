@@ -11,3 +11,5 @@
 ## converters.c - contains functions that converts characters or digits to different formats.
 
 ## hexa_functions.c - contains functions that perform operations to write to stdout.
+
+## num_functions.c - contains function that perform operations to write to stdout.
