@@ -29,6 +29,8 @@ int _putchar(char c);
 
 int print_hex(unsigned int n, unsigned int c);
 
+unsigned long _power(unsigned int n, unsigned int x);
+
 /* main _printf function */
 
 int _printf(const char *format, ...);
@@ -54,6 +56,8 @@ int print_octal(va_list o);
 int print_unsignedintx(va_list x);
 
 int print_unsignedintX(va_list X);
+
+int print_addr(va_list p);
 
 int print_stringNon(va_list s);
 
