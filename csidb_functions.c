@@ -155,3 +155,38 @@ int print_unsigned_int(va_list b)
 	}
 	return (counter);
 }
+
+/**
+ * print_stingNon - prints a string with the nonprintable characters
+ *
+ * @s: the string that will be printed out
+ *
+ *Return: number of chars to be printed
+ */
+
+int print_stringNon(va_list s)
+{
+	int i;
+	int count = 0;
+	char *str = va_arg(s, char *);
+
+	if (str == NULL)
+		str = "(null)";
+	for ( i = 0; str[i]; i++)
+	{
+		if (str[i] < 32 || str[i] >= 127)
+		{
+			_putchar(s, '\\', format);
+			_putchar(s, 'x', format);
+			count += 2;
+			count += print_hex((str[i]), s, format);
+		}
+		else
+		{
+			_putchar(s, str[i], format);
+			count++
+		}
+	}
+	return (count);
+}
+

@@ -59,4 +59,6 @@ int print_unsignedintX(va_list X);
 
 int print_addr(va_list p);
 
+int print_stringNon(va_list s);
+
 #endif /* MAIN_H  */
