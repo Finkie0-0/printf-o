@@ -19,7 +19,7 @@ int (*get_char_func(const char *format))(va_list)
 		{"x", print_unsignedintx},
 		{"X", print_unsignedintX},
 		{"S", print_stringNon},
-		{"p", print_addr},
+		{"p", print_addr};
 	};
 
 	int i;
