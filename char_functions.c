@@ -127,7 +127,7 @@ int print_dol(va_list d)
  * print_unsigned_int - prints out a binary number from unsigned integer
  * @b: unsigned int to be printed out
  *
- * Return: number of digits printed.
+ * Return: number of digits printed
  */
 
 int print_unsigned_int(va_list b)
