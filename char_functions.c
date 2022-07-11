@@ -17,7 +17,6 @@ int print_char(va_list c)
 	return (1);
 }
 
-
 /**
  * print_string - prints out the string.
  *
@@ -32,13 +31,13 @@ int print_string(va_list s)
 
 	if (str == NULL)
 		str = "(null)";
-
 	for (count = 0; str[count]; count++)
 	{
 		_putchar(str[count]);
 	}
 	return (count);
 }
+
 
 /* FOR NUMBERS && DIGITS */
 
@@ -118,6 +117,39 @@ int print_dol(va_list d)
 		if (sum != 0 || x == 9)
 		{
 			_putchar('0' + arr[x]);
+			counter++;
+		}
+	}
+	return (counter);
+}
+
+/**
+ * print_unsigned_int - prints out a binary number from unsigned integer
+ * @b: unsigned int to be printed out
+ *
+ * Return: number of digits printed.
+ */
+
+int print_unsigned_int(va_list b)
+{
+	unsigned int x, y, z, sum;
+	unsigned int arr[32];
+	int counter;
+
+	x = va_arg(b, unsigned int);
+	y = 2147483648;
+	arr[0] = x / y;
+	for (z = 1; z < 32; z++)
+	{
+		y /= 2;
+		arr[z] = (x / y) % 2;
+	}
+	for (z = 0, sum = 0, counter = 0; z < 32; z++)
+	{
+		sum += arr[z];
+		if (sum || z == 31)
+		{
+			_putchar('0' + arr[z]);
 			counter++;
 		}
 	}

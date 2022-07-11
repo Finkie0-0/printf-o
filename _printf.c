@@ -26,7 +26,8 @@ int _printf(const char *format, ...)
 			count++;
 		}
 		if (!format[i])
-			return (count);
+
+			return(count);
 		f = get_char_func(&format[i + 1]);
 		if (f != NULL)
 		{
