@@ -1,53 +1,49 @@
 #include "main.h"
 
+/* FOR HEXADECIMAL  */
+
 /**
- * convert_alpha_numeric - converts digits to char.
+ * print_hex - converts unsigned int to hexadecimal form.
  *
- * @number: integer of an input number or digit.
- * @upper: uppercase checker.
+ * @n: unsigned int to be printed out.
+ * @c: checks for uppercase letter.
  *
- * Return: converted value.
+ * Return: number of digits printed.
  */
 
-int convert_alpha_numeric(int number, int upper)
+int print_hex(unsigned int n, unsigned int c)
 {
-	if (number >= 10)
-		return (number - 10 + ((upper) ? 'A' : 'a'));
+	unsigned int arr[8];
+	unsigned int x, y, sum;
+	char diff;
+	int counter;
+
+	y = 268435456;
+	if (c)
+	{
+		diff = 'A' - ':';
+	}
 	else
-		return (number + '0');
-}
-
-/**
- * convert_base - convert unsigned from base 10 to base.
- *
- * @number: decimal number.
- * @base: base to convert from.
- * @upper: uppercase checker
- *
- * Return: string converted from number.
- */
-
-char *convert_base(unsigned long number, unsigned int base, int upper)
-{
-	int i = 0;
-	char *str;
-	unsigned long nbr = number;
-
-	do {
-		nbr /= base;
-		i++;
-	} while (nbr >= base);
-
-	str = malloc(sizeof(char) * i + 2);
-	if (!str)
-		return (0);
-	str[i + 1] = '\0';
-
-	do {
-		nbr = number % base;
-		str[i] = convert_alpha_numeric(nbr, upper);
-		number /= base;
-		i--;
-	} while (i >= 0);
-	return (str);
+		diff = 'a' - ':';
+	arr[0] = n / y;
+	for (x = 1; x < 8; x++)
+	{
+		y /= 16;
+		arr[x] = (n / y) % 16;
+	}
+	for (x = 0, sum = 0, counter = 0; x < 8; x++)
+	{
+		sum += arr[x];
+		if (sum || x == 7)
+		{
+			if (arr[x] < 10)
+			{
+				_putchar('0' + arr[x]);
+			}
+			else
+				_putchar('0' + diff + arr[x]);
+			counter++;
+		}
+	}
+	return (counter);
 }
