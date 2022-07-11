@@ -15,6 +15,9 @@ int (*get_char_func(const char *format))(va_list)
 		{"s", print_string},
 		{"d", print_dol},
 		{"i", print_int},
+		{"b", print_unsignedint},
+		{"x", print_unsignedintx},
+		{"X", print_unsignedintX},
 	};
 
 	int i;
