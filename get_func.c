@@ -18,9 +18,8 @@ int (*get_char_func(const char *format))(va_list)
 		{"o", print_octal},
 		{"x", print_unsignedintx},
 		{"X", print_unsignedintX},
-		{"s", print_stringNon},
-		{"p", print_addr},
-
+		{"S", print_stringNon},
+		{"p", print_addr};
 	};
 
 	int i;
